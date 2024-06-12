@@ -8,11 +8,13 @@ import com.badlogic.gdx.graphics.GL20;
 public class Pong extends ApplicationAdapter {
 	ShapeRenderer shape;
 	Ball ball;
+	Paddle paddle;
 	
 	@Override
 	public void create () {
 		shape = new ShapeRenderer();
-		ball = new Ball(20, 40, 20, 12, 5);
+		ball = new Ball(20, 40, 10, 5, 5);
+		paddle = new Paddle(0, 20, 10, 50);
 	}
 
 	@Override
@@ -20,7 +22,10 @@ public class Pong extends ApplicationAdapter {
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 		ball.update();
 		shape.begin(ShapeRenderer.ShapeType.Filled);
+		ball.update();
+		paddle.update();
 		ball.draw(shape);
+		paddle.draw(shape);
 		shape.end();
 	}
 }

@@ -24,6 +24,7 @@ public class Pong extends ApplicationAdapter {
 		shape.begin(ShapeRenderer.ShapeType.Filled);
 		ball.update();
 		paddle.update();
+		ball.checkCollision(paddle);
 		ball.draw(shape);
 		paddle.draw(shape);
 		shape.end();

@@ -31,4 +31,14 @@ public class Ball {
     public void draw(ShapeRenderer shape) {
         shape.circle(x, y, size);
     }
+    
+    public void checkCollision(Paddle paddle) {
+    	if (collidesWith(paddle))
+    		xSpeed = -xSpeed;
+    }
+    
+    public boolean collidesWith(Paddle paddle) {
+        return x + size >= paddle.x && x - size <= paddle.x + paddle.width &&
+                y + size >= paddle.y && y - size <= paddle.y + paddle.height;
+    }
 }

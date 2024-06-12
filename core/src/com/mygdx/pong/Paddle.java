@@ -21,8 +21,6 @@ public class Paddle {
         if (Gdx.input.isTouched()) {
             Vector3 touchPos = new Vector3();
             touchPos.set(Gdx.input.getX(), Gdx.input.getY(), 0);
-            System.out.println("y " + y);
-            System.out.println("touchPos.y " + touchPos.y);
             y = (int)touchPos.y;
             if (y < 0)
                 y = 0;

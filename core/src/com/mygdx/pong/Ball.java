@@ -36,9 +36,19 @@ public class Ball {
     	if (collidesWith(paddle))
     		xSpeed = -xSpeed;
     }
+
+    public void checkCollisionAI(PaddleAI paddleAI) {
+    	if (collidesWithAI(paddleAI))
+    		xSpeed = -xSpeed;
+    }
     
     public boolean collidesWith(Paddle paddle) {
         return x + size >= paddle.x && x - size <= paddle.x + paddle.width &&
                 y + size >= paddle.y && y - size <= paddle.y + paddle.height;
+    }
+
+    public boolean collidesWithAI(PaddleAI paddleAI) {
+        return x + size >= paddleAI.x && x - size <= paddleAI.x + paddleAI.width &&
+                y + size >= paddleAI.y && y - size <= paddleAI.y + paddleAI.height;
     }
 }

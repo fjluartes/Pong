@@ -21,7 +21,7 @@ public class Paddle {
         if (Gdx.input.isTouched()) {
             Vector3 touchPos = new Vector3();
             touchPos.set(Gdx.input.getX(), Gdx.input.getY(), 0);
-            y = (int)touchPos.y;
+            y = Gdx.graphics.getHeight() - (int)touchPos.y; // flip mouseY click
             if (y < 0)
                 y = 0;
             if (y > Gdx.graphics.getHeight() - height)

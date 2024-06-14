@@ -20,10 +20,8 @@ public class PaddleAI {
         int ySpeed = 5;
         y += ySpeed;
         if (y > Gdx.graphics.getHeight() - height) {
+            y = Gdx.graphics.getHeight() - height;
             y -= ySpeed;
-        }
-        if (y < 0) {
-            y += ySpeed;
         }
     }
 

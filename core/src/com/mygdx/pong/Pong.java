@@ -32,6 +32,7 @@ public class Pong extends ApplicationAdapter {
 		ball.draw(shape);
 		paddle.draw(shape);
 		paddleAI.draw(shape);
+		// add scoring
 		shape.end();
 	}
 }

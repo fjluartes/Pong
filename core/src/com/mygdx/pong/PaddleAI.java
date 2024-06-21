@@ -8,6 +8,7 @@ public class PaddleAI {
     int y;
     int width;
     int height;
+    int ySpeed = 3;
 
     public PaddleAI(int x, int y, int width, int height) {
         this.x = x;
@@ -17,11 +18,14 @@ public class PaddleAI {
     }
 
     public void update() {
-        int ySpeed = 5;
         y += ySpeed;
         if (y > Gdx.graphics.getHeight() - height) {
             y = Gdx.graphics.getHeight() - height;
-            y -= ySpeed;
+            ySpeed = -ySpeed;
+        }
+        if (y < 0) {
+            y = 0;
+            ySpeed = -ySpeed;
         }
     }
 

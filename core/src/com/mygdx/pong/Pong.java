@@ -14,7 +14,7 @@ public class Pong extends ApplicationAdapter {
 	@Override
 	public void create () {
 		shape = new ShapeRenderer();
-		ball = new Ball(20, 40, 10, 5, 5);
+		ball = new Ball(20, 40, 10, 2, 2);
 		paddle = new Paddle(0, 20, 10, 50);
 		paddleAI = new PaddleAI(Gdx.graphics.getWidth() - 10, 20, 10, 50);
 	}

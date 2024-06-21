@@ -14,7 +14,7 @@ public class Pong extends ApplicationAdapter {
 	@Override
 	public void create () {
 		shape = new ShapeRenderer();
-		ball = new Ball(20, 40, 10, 2, 2);
+		ball = new Ball(20, 40, 10, 3, 3);
 		paddle = new Paddle(0, 20, 10, 50);
 		paddleAI = new PaddleAI(Gdx.graphics.getWidth() - 10, 20, 10, 50);
 	}
@@ -22,7 +22,6 @@ public class Pong extends ApplicationAdapter {
 	@Override
 	public void render () {
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
-		ball.update();
 		shape.begin(ShapeRenderer.ShapeType.Filled);
 		shape.rect((float)Gdx.graphics.getWidth() / 2, 0, 1, Gdx.graphics.getHeight());
 		ball.update();

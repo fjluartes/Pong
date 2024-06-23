@@ -8,7 +8,7 @@ public class PaddleAI {
     int y;
     int width;
     int height;
-    int ySpeed = 3;
+    int ySpeed = 5;
 
     public PaddleAI(int x, int y, int width, int height) {
         this.x = x;

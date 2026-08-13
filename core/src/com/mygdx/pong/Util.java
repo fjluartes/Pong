@@ -6,26 +6,55 @@ public final class Util {
     private Util() {
     }
 
-    /**
-     * Axis-Aligned Bounding Box (AABB) collision check.
-     *
-     * Returns true if the two rectangles overlap.
-     *
-     * @param x1 top-left x of rectangle 1
-     * @param y1 top-left y of rectangle 1
-     * @param w1 width of rectangle 1
-     * @param h1 height of rectangle 1
-     * @param x2 top-left x of rectangle 2
-     * @param y2 top-left y of rectangle 2
-     * @param w2 width of rectangle 2
-     * @param h2 height of rectangle 2
-     * @return true if the rectangles collide, false otherwise
-     */
-    public static boolean collision(
-            int x1, int y1, int w1, int h1,
-            int x2, int y2, int w2, int h2) {
 
-        return Math.max(x1, x2) < Math.min(x1 + w1, x2 + w2)
-                && Math.max(y1, y2) < Math.min(y1 + h1, y2 + h2);
+    /**
+     * Checks collision between a ball and a paddle.
+     *
+     * @param ballX    Ball center X
+     * @param ballY    Ball center Y
+     * @param ballSize Ball radius/half-size
+     * @param paddleX  Paddle X
+     * @param paddleY  Paddle Y
+     * @param paddleWidth  Paddle width
+     * @param paddleHeight  Paddle height
+     * @return true if the ball overlaps the paddle
+     */
+    public static boolean collidesWith(
+            int ballX,
+            int ballY,
+            int ballSize,
+            int paddleX,
+            int paddleY,
+            int paddleWidth,
+            int paddleHeight) {
+
+        return ballX + ballSize >= paddleX
+                && ballX - ballSize <= paddleX + paddleWidth
+                && ballY + ballSize >= paddleY
+                && ballY - ballSize <= paddleY + paddleHeight;
+    }
+
+    public static boolean collidesWith(Ball ball, Paddle paddle) {
+        return collidesWith(
+                ball.x,
+                ball.y,
+                ball.size,
+                paddle.x,
+                paddle.y,
+                paddle.width,
+                paddle.height
+        );
+    }
+
+    public static boolean collidesWith(Ball ball, PaddleAI paddleAI) {
+        return collidesWith(
+                ball.x,
+                ball.y,
+                ball.size,
+                paddleAI.x,
+                paddleAI.y,
+                paddleAI.width,
+                paddleAI.height
+        );
     }
 }

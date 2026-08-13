@@ -6,13 +6,15 @@ Pong Clone using libGDX. Based on Colourtann's breakout [tutorial](https://colou
 
 ## TODO
 
-- [ ] Edit collision in ball/paddle
-- [ ] Add scoring
-- [ ] Add sounds
-- [ ] Add pause/menu
+- [ ] Add player scoring
+- [ ] Add racket sound
+- [ ] Add score sound
+- [ ] Add pause
+- [ ] Add reset game
 
 ## DONE
 
+- [x] Edit collision in ball/paddle
 - [x] Add PaddleAI movement
 - [x] Add Paddle arrow movement
 - [x] Create Util.java for collision

@@ -10,7 +10,7 @@ public class Paddle {
     int y;
     int width;
     int height;
-    int speed = 8;
+    int ySpeed = 8;
 
     public Paddle(int x, int y, int width, int height) {
         this.x = x;
@@ -26,16 +26,11 @@ public class Paddle {
         if (y > Gdx.graphics.getHeight() - height)
             y = Gdx.graphics.getHeight() - height;
 
-        if (Gdx.input.isTouched()) {
-            Vector3 touchPos = new Vector3();
-            touchPos.set(Gdx.input.getX(), Gdx.input.getY(), 0);
-            y = Gdx.graphics.getHeight() - (int)touchPos.y; // flip mouseY click
+        if (Gdx.input.isKeyPressed(Input.Keys.W)) {
+            y += ySpeed;
         }
-        if (Gdx.input.isKeyPressed(Input.Keys.UP)) {
-            y += speed;
-        }
-        if (Gdx.input.isKeyPressed(Input.Keys.DOWN)) {
-            y -= speed;
+        if (Gdx.input.isKeyPressed(Input.Keys.S)) {
+            y -= ySpeed;
         }
     }
 

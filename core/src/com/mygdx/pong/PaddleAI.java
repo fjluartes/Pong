@@ -1,6 +1,7 @@
 package com.mygdx.pong;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 
 public class PaddleAI {
@@ -8,7 +9,7 @@ public class PaddleAI {
     int y;
     int width;
     int height;
-    int ySpeed = 5;
+    int ySpeed = 8;
 
     public PaddleAI(int x, int y, int width, int height) {
         this.x = x;
@@ -18,14 +19,11 @@ public class PaddleAI {
     }
 
     public void update() {
-        y += ySpeed;
-        if (y > Gdx.graphics.getHeight() - height) {
-            y = Gdx.graphics.getHeight() - height;
-            ySpeed = -ySpeed;
+        if (Gdx.input.isKeyPressed(Input.Keys.UP)) {
+            y += ySpeed;
         }
-        if (y < 0) {
-            y = 0;
-            ySpeed = -ySpeed;
+        if (Gdx.input.isKeyPressed(Input.Keys.DOWN)) {
+            y -= ySpeed;
         }
     }
 

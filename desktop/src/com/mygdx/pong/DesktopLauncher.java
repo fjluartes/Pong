@@ -9,6 +9,7 @@ public class DesktopLauncher {
 		Lwjgl3ApplicationConfiguration config = new Lwjgl3ApplicationConfiguration();
 		config.setForegroundFPS(60);
 		config.setTitle("Pong");
+		config.setWindowedMode(800, 500);
 		new Lwjgl3Application(new Game(), config);
 	}
 }

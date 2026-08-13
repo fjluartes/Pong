@@ -7,14 +7,14 @@ Pong Clone using libGDX. Based on Colourtann's breakout [tutorial](https://colou
 ## TODO
 
 - [ ] Add player scoring
-- [ ] Add score display
 - [ ] Add racket sound
 - [ ] Add score sound
 - [ ] Add pause
-- [ ] Add reset game
+- [ ] Add restart game
 
 ## DONE
 
+- [x] Add score display
 - [x] Edit collision in ball/paddle
 - [x] Add PaddleAI movement
 - [x] Add Paddle arrow movement

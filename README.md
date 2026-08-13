@@ -7,6 +7,7 @@ Pong Clone using libGDX. Based on Colourtann's breakout [tutorial](https://colou
 ## TODO
 
 - [ ] Add player scoring
+- [ ] Add score display
 - [ ] Add racket sound
 - [ ] Add score sound
 - [ ] Add pause

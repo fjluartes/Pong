@@ -33,12 +33,10 @@ public class Ball {
     }
     
     public void checkCollision(Paddle paddle) {
-    	if (Util.collidesWith(this, paddle))
-    		xSpeed = -xSpeed;
+    	Util.collidePaddle(this, paddle);
     }
 
     public void checkCollisionAI(PaddleAI paddleAI) {
-    	if (Util.collidesWith(this, paddleAI))
-    		xSpeed = -xSpeed;
+    	Util.collidePaddleAI(this, paddleAI);
     }
 }

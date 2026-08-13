@@ -34,27 +34,51 @@ public final class Util {
                 && ballY - ballSize <= paddleY + paddleHeight;
     }
 
-    public static boolean collidesWith(Ball ball, Paddle paddle) {
-        return collidesWith(
+    /**
+     * Ball colliding with the left paddle.
+     */
+    public static void collidePaddle(
+            Ball ball,
+            Paddle paddle) {
+
+        if (ball.xSpeed < 0 && collidesWith(
                 ball.x,
                 ball.y,
                 ball.size,
                 paddle.x,
                 paddle.y,
                 paddle.width,
-                paddle.height
-        );
+                paddle.height)) {
+
+            // Push ball outside the paddle
+            ball.x = paddle.x + paddle.width + ball.size;
+
+            // Bounce
+            ball.xSpeed = -ball.xSpeed;
+        }
     }
 
-    public static boolean collidesWith(Ball ball, PaddleAI paddleAI) {
-        return collidesWith(
+    /**
+     * Ball colliding with the right paddle.
+     */
+    public static void collidePaddleAI(
+            Ball ball,
+            PaddleAI paddle) {
+
+        if (ball.xSpeed > 0 && collidesWith(
                 ball.x,
                 ball.y,
                 ball.size,
-                paddleAI.x,
-                paddleAI.y,
-                paddleAI.width,
-                paddleAI.height
-        );
+                paddle.x,
+                paddle.y,
+                paddle.width,
+                paddle.height)) {
+
+            // Push ball outside the paddle
+            ball.x = paddle.x - ball.size;
+
+            // Bounce
+            ball.xSpeed = -ball.xSpeed;
+        }
     }
 }

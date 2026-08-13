@@ -5,7 +5,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.graphics.GL20;
 
-public class Pong extends ApplicationAdapter {
+public class Game extends ApplicationAdapter {
 	ShapeRenderer shape;
 	Ball ball;
 	Paddle paddle;
@@ -24,15 +24,26 @@ public class Pong extends ApplicationAdapter {
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 		shape.begin(ShapeRenderer.ShapeType.Filled);
 		shape.rect((float)Gdx.graphics.getWidth() / 2, 0, 1, Gdx.graphics.getHeight());
+		update();
+		logic();
+		draw();
+		shape.end();
+	}
+
+	private void update() {
 		ball.update();
 		paddle.update();
 		paddleAI.update();
+	}
+
+	private void logic() {
 		ball.checkCollision(paddle);
 		ball.checkCollisionAI(paddleAI);
+	}
+
+	private void draw() {
 		ball.draw(shape);
 		paddle.draw(shape);
 		paddleAI.draw(shape);
-		// add scoring
-		shape.end();
 	}
 }

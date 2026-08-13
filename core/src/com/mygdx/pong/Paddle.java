@@ -23,13 +23,13 @@ public class Paddle {
         // clamp to top & bottom
         if (y < 0)
             y = 0;
-        if (y > Gdx.graphics.getHeight() - height)
+        else if (y > Gdx.graphics.getHeight() - height)
             y = Gdx.graphics.getHeight() - height;
 
         if (Gdx.input.isKeyPressed(Input.Keys.W)) {
             y += ySpeed;
         }
-        if (Gdx.input.isKeyPressed(Input.Keys.S)) {
+        else if (Gdx.input.isKeyPressed(Input.Keys.S)) {
             y -= ySpeed;
         }
     }

@@ -19,10 +19,16 @@ public class PaddleAI {
     }
 
     public void update() {
+        // clamp to top & bottom
+        if (y < 0)
+            y = 0;
+        else if (y > Gdx.graphics.getHeight() - height)
+            y = Gdx.graphics.getHeight() - height;
+
         if (Gdx.input.isKeyPressed(Input.Keys.UP)) {
             y += ySpeed;
         }
-        if (Gdx.input.isKeyPressed(Input.Keys.DOWN)) {
+        else if (Gdx.input.isKeyPressed(Input.Keys.DOWN)) {
             y -= ySpeed;
         }
     }

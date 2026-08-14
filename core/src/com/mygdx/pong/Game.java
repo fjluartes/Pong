@@ -16,6 +16,8 @@ public class Game extends ApplicationAdapter {
 	private Paddle paddle;
 	private PaddleAI paddleAI;
 	private BitmapFont font;
+	public int score1 = 0;
+	public int score2 = 0;
 	
 	@Override
 	public void create () {
@@ -71,8 +73,8 @@ public class Game extends ApplicationAdapter {
 		shape.end();
 
 		batch.begin();
-		font.draw(batch, "0", screenWidth - 600, screenHeight - 50);
-		font.draw(batch, "0", screenWidth - 200, screenHeight - 50);
+		font.draw(batch, Integer.toString(score1), screenWidth - 600, screenHeight - 50);
+		font.draw(batch, Integer.toString(score2), screenWidth - 200, screenHeight - 50);
 		batch.end();
 	}
 

@@ -22,10 +22,12 @@ public class Ball {
         x += xSpeed;
         y += ySpeed;
 
-        if (x < 0 || x > Gdx.graphics.getWidth())
-            xSpeed = -xSpeed;
         if (y < 0 || y > Gdx.graphics.getHeight())
             ySpeed = -ySpeed;
+        if (x < 0 || x > Gdx.graphics.getWidth()) {
+            x = Gdx.graphics.getWidth() / 2;
+            y = Gdx.graphics.getHeight() / 2;
+        }
     }
 
     public void draw(ShapeRenderer shape) {

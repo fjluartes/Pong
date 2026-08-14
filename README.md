@@ -7,10 +7,11 @@ Pong Clone using libGDX. Based on Colourtann's breakout [tutorial](https://colou
 ## TODO
 
 - [ ] Add player scoring
+- [ ] Update score
 - [ ] Add player winner when score is 11
-- [ ] Add pause/restart game
-- [ ] Add racket sound
-- [ ] Add score sound
+- [ ] Add reset game
+- [ ] Add menu
+- [ ] Add basic sounds (ball-paddle, player score)
 
 ## DONE
 

@@ -16,8 +16,7 @@ public class Game extends ApplicationAdapter {
 	private Paddle paddle;
 	private PaddleAI paddleAI;
 	private BitmapFont font;
-	public int score1 = 0;
-	public int score2 = 0;
+	UI ui = new UI();
 	
 	@Override
 	public void create () {
@@ -52,6 +51,8 @@ public class Game extends ApplicationAdapter {
 		ball.update();
 		paddle.update();
 		paddleAI.update();
+		System.out.println("player1 score: " + ui.getScore1());
+		System.out.println("player2 score: " + ui.getScore2());
 	}
 
 	private void logic() {
@@ -73,8 +74,8 @@ public class Game extends ApplicationAdapter {
 		shape.end();
 
 		batch.begin();
-		font.draw(batch, Integer.toString(score1), screenWidth - 600, screenHeight - 50);
-		font.draw(batch, Integer.toString(score2), screenWidth - 200, screenHeight - 50);
+		font.draw(batch, Integer.toString(ui.getScore1()), screenWidth - 600, screenHeight - 50);
+		font.draw(batch, Integer.toString(ui.getScore2()), screenWidth - 200, screenHeight - 50);
 		batch.end();
 	}
 

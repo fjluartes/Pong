@@ -6,8 +6,6 @@ Pong Clone using libGDX. Based on Colourtann's breakout [tutorial](https://colou
 
 ## TODO
 
-- [ ] Add player scoring
-- [ ] Update score
 - [ ] Add player winner when score is 11
 - [ ] Add reset game
 - [ ] Add menu
@@ -15,6 +13,8 @@ Pong Clone using libGDX. Based on Colourtann's breakout [tutorial](https://colou
 
 ## DONE
 
+- [x] Add player scoring
+- [x] Update score
 - [x] Add score display
 - [x] Edit collision in ball/paddle
 - [x] Add PaddleAI movement

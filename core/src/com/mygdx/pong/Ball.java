@@ -9,9 +9,6 @@ public class Ball {
     int size;
     int xSpeed;
     int ySpeed;
-    private int score1;
-    private int score2;
-    UI ui = new UI();
 
     public Ball(int x, int y, int size, int xSpeed, int ySpeed) {
         this.x = x;
@@ -25,17 +22,8 @@ public class Ball {
         x += xSpeed;
         y += ySpeed;
 
-        if (y < 0 || y > Gdx.graphics.getHeight())
+        if (y < 0 || y > Gdx.graphics.getHeight()) {
             ySpeed = -ySpeed;
-        if (x < 0 || x > Gdx.graphics.getWidth()) {
-            x = Gdx.graphics.getWidth() / 2;
-            y = Gdx.graphics.getHeight() / 2;
-        }
-        if (x < 0) {
-            ui.setScore2(score2++);
-        }
-        else if (x > Gdx.graphics.getWidth()) {
-            ui.setScore1(score1++);
         }
     }
 

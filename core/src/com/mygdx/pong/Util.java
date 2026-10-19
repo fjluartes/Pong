@@ -3,9 +3,7 @@ package com.mygdx.pong;
 public final class Util {
 
     // Prevent instantiation of this utility class.
-    private Util() {
-    }
-
+    private Util() {}
 
     /**
      * Checks collision between a ball and a paddle.

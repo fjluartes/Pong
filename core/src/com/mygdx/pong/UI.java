@@ -4,9 +4,9 @@ public class UI {
     public int score1;
     public int score2;
 
-    public UI() {
-        this.score1 = 0;
-        this.score2 = 0;
+    public UI(int score1, int score2) {
+        this.score1 = score1;
+        this.score2 = score2;
     }
 
     public int getScore1() {

@@ -16,7 +16,13 @@ public class Game extends ApplicationAdapter {
 	private Paddle paddle;
 	private PaddleAI paddleAI;
 	private BitmapFont font;
-	UI ui = new UI();
+	UI ui = new UI(0, 0);
+
+	private void resetBall() {
+		ball.x = Gdx.graphics.getWidth() / 2;
+		ball.y = Gdx.graphics.getHeight() / 2;
+		ball.xSpeed = -ball.xSpeed;
+	}
 	
 	@Override
 	public void create () {
@@ -34,7 +40,7 @@ public class Game extends ApplicationAdapter {
 		paddleAI = new PaddleAI(screenWidth - 70, (screenHeight - 10) / 2, paddleWidth, paddleHeight);
 		generator = new FreeTypeFontGenerator(Gdx.files.internal("fonts/Kenney-Bold.ttf"));
 		parameter = new FreeTypeFontGenerator.FreeTypeFontParameter();
-		parameter.size = 24;
+		parameter.size = 36;
 		parameter.color = Color.WHITE;
 		font = generator.generateFont(parameter);
 		generator.dispose();
@@ -51,8 +57,14 @@ public class Game extends ApplicationAdapter {
 		ball.update();
 		paddle.update();
 		paddleAI.update();
-//		System.out.println("player1 score: " + ui.getScore1());
-//		System.out.println("player2 score: " + ui.getScore2());
+		if (ball.x < 0) {
+			ui.setScore2(ui.getScore2() + 1);
+			resetBall();
+		}
+		else if (ball.x > Gdx.graphics.getWidth()) {
+			ui.setScore1(ui.getScore1() + 1);
+			resetBall();
+		}
 	}
 
 	private void logic() {

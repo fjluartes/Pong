@@ -21,10 +21,12 @@ public class Paddle {
 
     public void update() {
         // clamp to top & bottom
-        if (y < 0)
+        if (y < 0) {
             y = 0;
-        else if (y > Gdx.graphics.getHeight() - height)
+        }
+        else if (y > Gdx.graphics.getHeight() - height) {
             y = Gdx.graphics.getHeight() - height;
+        }
 
         if (Gdx.input.isKeyPressed(Input.Keys.W)) {
             y += ySpeed;

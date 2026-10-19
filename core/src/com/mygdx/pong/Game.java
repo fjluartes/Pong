@@ -51,8 +51,8 @@ public class Game extends ApplicationAdapter {
 		ball.update();
 		paddle.update();
 		paddleAI.update();
-		System.out.println("player1 score: " + ui.getScore1());
-		System.out.println("player2 score: " + ui.getScore2());
+//		System.out.println("player1 score: " + ui.getScore1());
+//		System.out.println("player2 score: " + ui.getScore2());
 	}
 
 	private void logic() {

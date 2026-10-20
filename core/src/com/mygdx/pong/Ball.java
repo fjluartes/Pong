@@ -18,6 +18,22 @@ public class Ball {
         this.ySpeed = ySpeed;
     }
 
+    public int getXSpeed() {
+        return xSpeed;
+    }
+
+    public void setXSpeed(int xSpeed) {
+        this.xSpeed = xSpeed;
+    }
+
+    public int getYSpeed() {
+        return ySpeed;
+    }
+
+    public void setYSpeed(int ySpeed) {
+        this.ySpeed = ySpeed;
+    }
+
     public void update() {
         x += xSpeed;
         y += ySpeed;

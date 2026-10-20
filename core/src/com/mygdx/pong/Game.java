@@ -2,6 +2,7 @@ package com.mygdx.pong;
 
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -21,7 +22,8 @@ public class Game extends ApplicationAdapter {
 	private void resetBall() {
 		ball.x = Gdx.graphics.getWidth() / 2;
 		ball.y = Gdx.graphics.getHeight() / 2;
-		ball.xSpeed = -ball.xSpeed;
+		ball.setXSpeed(0);
+		ball.setYSpeed(0);
 	}
 	
 	@Override
@@ -64,6 +66,14 @@ public class Game extends ApplicationAdapter {
 		else if (ball.x > Gdx.graphics.getWidth()) {
 			ui.setScore1(ui.getScore1() + 1);
 			resetBall();
+		}
+		if (Gdx.input.isKeyPressed(Input.Keys.SPACE)) {
+			System.out.println(ball.getXSpeed());
+			System.out.println(ball.getYSpeed());
+			ball.setXSpeed(7);
+			ball.setYSpeed(7);
+			System.out.println(ball.getXSpeed());
+			System.out.println(ball.getYSpeed());
 		}
 	}
 
